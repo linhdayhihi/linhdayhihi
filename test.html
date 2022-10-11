@@ -1,10 +1,15 @@
 <html>
     <head>
         <style>
+            html{
+                overflow: hidden;
+                cursor: url(https://img.icons8.com/ios-filled/1x/location-off.png), auto;
+            }
             body{
+                position:absolute;
                 background-color: gray;
-                margin-left: 100px;
-                margin-top: 100px;
+                width: 600px;
+                height: 600px;
                 
             }
           
@@ -14,8 +19,8 @@
                 height: 50px;
                 background-color: red;
                 border-radius: 100%;
-                left :380px;
-                top: 380px;
+                left :280px;
+                top: 280px;
                 z-index: 6;
                 animation: rotate-vt 0.5s linear infinite;
 
@@ -240,4 +245,25 @@
                 </div>
             </div>
     </body>
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <script>
+
+    $(document).ready(function(){
+      $(document).mousemove(function(event){
+        setTimeout(()=>{
+        $("body").css("top",event.pageY - 300 + 24);
+        $("body").css("left",event.pageX - 300 + 24);},50);
+      });
+    });
+
+    function updatevitri(x,y){
+        $(document).ready(function(){
+        $("body").css("top",y);
+        $("body").css("left",x);
+    });
+    }
+    </script>
 </html>
