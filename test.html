@@ -1,0 +1,243 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: gray;
+                margin-left: 100px;
+                margin-top: 100px;
+                
+            }
+          
+            .vongtron{
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background-color: red;
+                border-radius: 100%;
+                left :380px;
+                top: 380px;
+                z-index: 6;
+                animation: rotate-vt 0.5s linear infinite;
+
+            }
+            .vongtron-nho{
+                position: absolute;
+                left: 5px;
+                top: 5px;
+                width: 40px;
+                height: 40px;
+                background-color: rgba(228, 7, 7, 0);
+                border-radius: 100%;
+                
+            }
+            .o1{
+                background-color: rgba(228, 7, 7, 0);
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-bottom: 2px solid black;
+                border-right: 2px solid black;
+                box-sizing: border-box;
+            }
+            .o2{
+                position: absolute;
+                left :20px;
+                width: 20px;
+                height: 20px;
+                border-bottom: 2px solid black;
+                border-left: 2px solid black;
+                box-sizing: border-box;
+            }
+            .o3{
+                position:absolute;
+                width: 20px;
+                height: 20px;
+                top : 20px;
+                border-top: 2px solid black;
+                border-right: 2px solid black;
+                box-sizing: border-box;
+            }
+            .o4{
+                top: 20px;
+                left: 20px;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-top: 2px solid black;
+                border-left: 2px solid black;
+                box-sizing: border-box;
+            }
+            .top{
+                display: flex;
+            }
+            .bot{
+                display: flex;
+            }
+            .loading-1{
+                position: absolute;
+                animation: rotate-one 0.5s linear infinite;
+                width: 600px;   
+            }
+            .loading-2{
+                position: absolute;
+                animation: rotate-hai 0.5s linear infinite;
+                width: 600px; 
+            }
+            .loading-3{
+                position: absolute;
+                animation: rotate-ba 0.5s linear infinite;
+                width: 600px; 
+            }
+            .load1{
+                margin: 0;
+                width: 300px;
+                height: 300px;
+                border-top: 10px solid white;
+               z-index: 1;
+                border-top-left-radius: 100%;
+
+                box-shadow: inset 3px 3px  black ,
+                            inset 3px 3px 2px 1px black,
+                            inset 5px 5px 5px rgb(116, 3, 3),
+                            inset 10px 10px 15px rgb(166, 23, 23),
+                            inset 0px 40px 10px rgba(228, 7, 7, 0.508),
+                            
+                            0px -3px 2px 1px black,
+                            0px -5px 5px rgb(116, 3, 3),
+                            0px -20px 20px rgb(166, 23, 23),
+                            0px -50px 2000px rgba(228, 7, 7, 0.508)
+                           
+                
+            }
+            /* .chephu{
+                background-color: gray;
+                width: 500px;
+                height: 500px;
+                left: 30px;
+                top: 40px;
+                position: absolute;
+                border-radius: 100%;
+                z-index: 5;
+            } */
+            .load2{
+                /* position: absolute;
+                left: 285px; */
+                width: 300px;
+                height: 300px;
+                z-index: 1;
+                border-top: 10px solid white;
+                border-right: 20px solid white;
+                border-top-right-radius: 100%;
+                box-shadow: inset -3px 3px  black ,
+                            inset -3px 3px 2px 1px black,
+                            inset -5px 5px 5px rgb(116, 3, 3),
+                            inset -10px 10px 30px rgb(166, 23, 23),
+                            inset -30px 60px 30px rgba(228, 7, 7, 0.508),
+                           
+                            1px -3px 2px 0px black,
+                            10px -5px 5px rgb(116, 3, 3),
+                            0px -10px 20px rgb(166, 23, 23),
+                            0px -30px 15px rgba(228, 7, 7, 0.508),
+                            20px -30px 2000px rgba(255,0,0,0.5);
+            }
+            .load3{
+                width: 300px;
+                height: 300px;  
+            }
+            .load4{
+                /* position:absolute;
+                top: 285px;
+                left: 285px; */
+                width: 300px;
+                height: 300px;
+                border-right:20px solid white ;
+            
+                border-bottom: 20px solid white;
+                border-bottom-right-radius: 100%;
+                box-shadow: inset -3px -3px  black ,
+                            inset -3px -3px 2px 1px black,
+                            inset -5px -5px 5px rgb(116, 3, 3),
+                            inset -10px -20px 20px rgb(166, 23, 23),
+                            inset -50px -60px 0px rgba(228, 7, 7, 0.508),
+                            
+                            3px 3px 2px 1px black,
+                            5px 5px 5px rgb(116, 3, 3),
+                            20px 20px 20px rgb(166, 23, 23),
+                            30px -40px 10px rgba(228, 7, 7, 0.508),
+                            40px -20px 2000px rgba(255,0,0,1)
+                            ;
+            }
+            @keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(45deg)  rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(45deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate-vt {
+    0% {
+    transform:  rotateX(70deg)  rotateZ(0deg);
+  }
+  100% {
+    transform:  rotateX(70deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate-hai {
+  0% {
+    transform:  rotateX(70deg)  rotateZ(0deg);
+  }
+  100% {
+    transform:  rotateX(70deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate-ba {
+    0% {
+    transform: rotateX(70deg) rotateY(-45deg)  rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(70deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+        </style>
+    </head>
+    <body>
+        
+        <div class="all-load">
+            <div class="vongtron">
+                <div class="vongtron-nho">
+                    <div class="o1"></div>
+                    <div class="o2"></div>
+                    <div class="o3"></div>
+                    <div class="o4"></div>
+                </div>
+            </div>
+        <div class="loading-1">
+        <div class="chephu"></div>
+        <div class="top">
+        <div class="load1"></div>
+        <div class="load2"></div>
+        </div>
+        <div class="bot"><div class="load3"></div><div class="load4"></div></div>
+        </div> 
+
+        <div class="loading-2">
+            <div class="chephu"></div>
+            <div class="top">
+            <div class="load1"></div>
+            <div class="load2"></div>
+            </div>
+            <div class="bot"><div class="load3"></div><div class="load4"></div></div>
+            </div>
+            
+            <div class="loading-3">
+                <div class="chephu"></div>
+                <div class="top">
+                <div class="load1"></div>
+                <div class="load2"></div>
+                </div>
+                <div class="bot"><div class="load3"></div><div class="load4"></div></div>
+                </div>
+            </div>
+    </body>
+</html>
