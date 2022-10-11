@@ -5,13 +5,14 @@
             html{
                 overflow: hidden;
                 cursor: url(https://img.icons8.com/ios-filled/1x/location-off.png), auto;
+                
             }
             body{
                 position:absolute;
                 background-color: gray;
                 width: 600px;
                 height: 600px;
-                
+                transform: scale(0.3, 0.3);
             }
           
             .vongtron{
@@ -254,17 +255,11 @@
 
     $(document).ready(function(){
       $(document).mousemove(function(event){
-        setTimeout(()=>{
-        $("body").css("top",event.pageY - 300 + 24);
-        $("body").css("left",event.pageX - 300 + 24);},50);
+        $("body").css("top",event.pageY - 600*0.3  - 100 );
+        $("body").css("left",event.pageX - 600*0.3 -100);
       });
     });
 
-    function updatevitri(x,y){
-        $(document).ready(function(){
-        $("body").css("top",y);
-        $("body").css("left",x);
-    });
-    }
+
     </script>
 </html>
