@@ -2,8 +2,31 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+         <style>
+            .load-page{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: gray;
+                z-index: 10;
+                display: flex;
+                
+            }
+            .logo-l-p{
+                width: 200px;
+                height: 200px;
+                background-image: url("fuck.png");
+                margin-left: auto;
+                margin-right: auto;
+                align-self: center;
+                
+            }
+        </style>
     </head>
     <body>
+        <div class="load-page">
+            <div class="logo-l-p"></div>
+        </div>
         <div class="container" >
             <div class="header-container" >
                 <div class="header">
@@ -123,7 +146,12 @@ function ModelUpdatePage(a){
 }
 setInterval(updatePage,2000);
     $(document).ready(function() {
- 
+ setInterval(updatePage,2000);
+    $(document).ready(function() {
+        $(window).on('load', function(event) {
+            setTimeout(()=>{
+   $(".load-page").css("display","none")},2000);
+});
         for(var i = 1; i< 26; i++){
             $(`p:nth-child(${i})`).css("opacity",`${ii-phantram}`);
             $(`p:nth-child(${i})`).css("font-size",`${fd}`);
