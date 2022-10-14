@@ -1,14 +1,41 @@
+
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+         <style>
+            .load-page{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: gray;
+                z-index: 10;
+                display: flex;
+                
+            }
+            .logo-l-p{
+                width: 200px;
+                height: 400px;
+                background-image: url("vkl.jpg");
+                margin-left: auto;
+                margin-right: auto;
+                align-self: center;
+                background-size:cover;
+                
+            }
+        </style>
+        <title>Linh đây hihi</title>
+        <link rel="shortcut icon" href="/icon-logo-heart.png" />
     </head>
     <body>
+        <div class="load-page">
+            <div class="logo-l-p"></div>
+        </div>
         <div class="container" >
             <div class="header-container" >
                 <div class="header">
                 <div class="header-logo">
-                    <img src="http://www.feedmusic.com/images/logo.svg" width="20px">
+                    <img src="/logo-o.svg" width="20px">
 
                 </div>
                 <div class="header-content" >
@@ -42,30 +69,30 @@
                 </video>
                 
                 <div class="baophu">
-                <p>When you want something,</p>
-                <p>all the universe conspires</p>
-                <p>in helping you to achieve it.</p>
+                <p>Tớ là Linh đây</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
                 <p></p>
-                <p>Paulo Coelho</p>
-                <p>Feed is that conspiracy:</p>
-                <p>the conspiracy of trust.</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
                 <p></p>
-                <p>Trust is the single</p>
-                <p>most important ingredient</p>
-                <p>missing from digital relationships.</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
                 <p></p>
-                <p>Boston Consulting Group</p>
-                <p>and the World Economic Forum</p>
-                <p>forecast the digital economy</p>
-                <p>to be worth between</p>
-                <p>1.5 and 2.5 trillion dollars</p>
-                <p>by 2016.</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
                 <p></p>
-                <p>The difference</p>
-                <p>between those numbers</p>
-                <p>is <u>trust</u>^1.</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
+                <p>Không biết viết gì nữa :v</p>
                 <p></p>
-                <p>Feed is a digital mechanism of <b>trust</b></p>
+                <p>Linhdayhihi :3</b></p>
                 <p></p>
                 <p></p>
                 <p></p>
@@ -76,7 +103,11 @@
            
             </div>
             <div class="page-2" id="Page_2" style="display: none;"></div>
-           
+            <div class="page-3" id="Page_3"style="display: none;">
+                <div class="page-3-img">
+
+                </div>
+            </div>>
            
            
         </div>
@@ -95,11 +126,26 @@
         var kichthuoc_2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 
+        // IMG
+
+
+        var soluonganh = 180;
+        
+
         //
         var currentPage = 1;
         var prePage = 1;
-        var countPage = 2;
+        var countPage = 3;
         var check_nextPage_1 = false;
+        var timeD = 0;
+        var last_time = 1;
+        var last_time_img = 0;
+        var currentIMG = 1;
+        var lastIMG = 0;
+        var check_go_img_3 = true;
+setInterval(()=>{
+    timeD+=1000;
+},1000);
 function updatePage(){
     for(let i =1; i<= countPage; i++){
         $(document).ready(function() {
@@ -111,19 +157,27 @@ function updatePage(){
     }
 }  
 function ModelUpdatePage(a){
-        prePage = currentPage;
-                if(a /120 > 0) {
-                    currentPage =1;
+        if(timeD - last_time > 2){
+                if(a /120 > 0 && currentPage > 1) {
+                    currentPage--;
                 }
                 else{
-                    currentPage = 2;
-                }
-               
-            
+                    if(currentPage < countPage){
+                    currentPage++;}
+                }   
+                last_time = timeD;  
+            } 
+
 }
 setInterval(updatePage,2000);
+
+
+
     $(document).ready(function() {
- 
+        $(window).on('load', function(event) {
+            setTimeout(()=>{
+   $(".load-page").css("display","none")},2000);
+});
         for(var i = 1; i< 26; i++){
             $(`p:nth-child(${i})`).css("opacity",`${ii-phantram}`);
             $(`p:nth-child(${i})`).css("font-size",`${fd}`);
@@ -140,7 +194,7 @@ setInterval(updatePage,2000);
             } else{
                 check_nextPage_1=false;
             }
-            console.log(check_nextPage_1);
+
             $(".process-i").css("width",`${vitri/18.8}%`)
             
             for(var i = 1; i< 26; i++){
@@ -162,15 +216,49 @@ setInterval(updatePage,2000);
             }
         });
 // lăn chuột :v
-
         $('.container').bind('mousewheel', function(e){
-            
-            if(check_nextPage_1){
-                ModelUpdatePage(e.originalEvent.wheelDelta);
+            if(check_nextPage_1 && check_go_img_3){
+            ModelUpdatePage(e.originalEvent.wheelDelta);
             }
+            if(currentPage==3){
+            changeIMG(e.originalEvent.wheelDelta);
+                check_go_img_3=false;
+            }
+        
         });
+
+
+
+   for(var i = 180; i > 0; i--){
+    $(`<img src="http://www.feedmusic.com/images/frame-low/${i}.jpg" id="img_id_${i}" width="100%" height="100%" style ="display : none">`).insertAfter(".page-3-img");
+   }
+
     });
 
+function changeIMG(a){
+    $(document).ready(function() {
+       
+        lastIMG = currentIMG;
+        if(a>0 && currentIMG>1)
+        currentIMG--;
+        if(a<=0 && currentIMG<soluonganh)
+        currentIMG++;
+        updateIMG();
+        if(currentIMG == soluonganh && a<0){
+        check_go_img_3 = true;}
+        if(currentIMG == 1 && a>0){
+        check_go_img_3 = true;
+    }
+        last_time_img = timeD;
+        console.log(currentIMG)
+        
+    });
+}
+function updateIMG(){
+    if(lastIMG != currentIMG){
+    $(`#img_id_${currentIMG}`).css("display","block");
+    $(`#img_id_${lastIMG}`).css("display","none");}
+}
 
 
 
